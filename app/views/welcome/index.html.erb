@@ -1,0 +1,85 @@
+<div class="row">
+<div class="col-12">
+<div class="row">
+	  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+	    <h1 class="display-4">I make apps.</h1>
+	    <p class="lead">I make mobile games and web applications.  However, sometimes I enjoy making art in Blender.</p>
+	  </div>
+	  
+	  </div>
+	  <p id="notice"><%= notice %></p>
+	  <div class="row">
+	  <h2>My Blender Art</h2>
+	  
+	  <div class="card-columns">
+	      <% @blender_arts.each do |blender_art| %>
+			  
+		  <div class="card mb-3">
+		    <div class="card-header small text-muted">Blender Art</div>
+		    <div class="card-body">
+				<p><img src="<%= blender_art.image_url %>" class="img-fluid"/></p>
+		      <h5 class="card-title"><%= blender_art.name %></h5>
+		      <p class="card-text small"><%= blender_art.description %></p>
+		    </div>
+		    <div class="card-footer small text-muted"><%= link_to "Artstation", blender_art.link %></div>
+		  </div>
+		  
+		  
+		  <% end %>
+	  </div>
+	  
+	  
+	  
+	  
+	  </div>
+	  <div class="row">
+	  <h2>My Web Apps</h2>
+	  
+	  <div class="card-columns">
+	      <% @web_apps.each do |web_app| %>
+	       
+			  
+			  <div class="card mb-3">
+			    <div class="card-header small text-muted">Web Application</div>
+			    <div class="card-body">
+					<p><%= image_tag "screenshot.png" , class:"img-fluid"%></p>
+			      <h5 class="card-title"><%= web_app.name %></h5>
+			      <p class="card-text small"><%= web_app.description %></p>
+			    </div>
+			    <div class="card-footer small text-muted"><%= link_to "Visit", web_app.link %></div>
+			  </div>
+
+			  
+			  <% end %>
+		  
+	  </div>
+	  
+	  
+	  
+	  </div>
+	  <div class="row">
+	  <h2>My Mobile Apps</h2>
+	  
+	  <div class="card-columns">
+	      <% @mobile_apps.each do |mobile_app| %>
+	       
+			  
+			  <div class="card mb-3">
+			    <div class="card-header small text-muted">Mobile Application</div>
+			    <div class="card-body">
+					<p><img src="<%= mobile_app.image_url %>" class="img-fluid"/></p>
+			      <h5 class="card-title"><%= mobile_app.name %></h5>
+			      <p class="card-text small"><%= mobile_app.description %></p>
+			    </div>
+			    <div class="card-footer small text-muted"><%= link_to "Google Play", mobile_app.store_link %></div>
+			  </div>
+
+			  
+			  <% end %>
+		  
+		  
+	  </div>
+  </div>
+  </div>
+	  
+  </div>

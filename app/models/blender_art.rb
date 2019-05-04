@@ -1,0 +1,2 @@
+class BlenderArt < ApplicationRecord
+end

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+   <title>Lyle Goff - <%= controller.controller_name.humanize() %></title>
+   
+<meta property="og:url"           content="<%= request.original_url %>" />
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="Lyle Goff" />
+  <meta property="og:description"   content="Lyle Goff's Portfolio" />
+  
+  <link rel="canonical" href="<%=request.original_url%>">
+  
+  <%= favicon_link_tag asset_path('icon.png') %>
+   
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+	<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+	<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	
+	<script type='text/javascript' src='//platform-api.sharethis.com/js/sharethis.js#property=5ccd558edf3d660019faa2d8&product=sticky-share-buttons' async='async'></script>
+  </head>
+
+  <body>
+
+	    <!--[if IE]>
+	      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+	    <![endif]-->
+
+	    <!-- Add your site or application content here -->
+	  <%= render "welcome/navbar" %>
+	  
+	  
+	  
+	  <div class="container">
+	  
+    <%= yield %>
+	<%= render "welcome/footer" %>
+</div>
+	
+	
+	
+	
+	<%= render "welcome/google_analytics" %>
+  </body>
+</html>

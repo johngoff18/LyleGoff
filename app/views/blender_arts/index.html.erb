@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Blender Arts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Image url</th>
+      <th>Link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @blender_arts.each do |blender_art| %>
+      <tr>
+        <td><%= blender_art.name %></td>
+        <td><%= blender_art.description %></td>
+        <td><%= blender_art.image_url %></td>
+        <td><%= blender_art.link %></td>
+        <td><%= link_to 'Show', blender_art %></td>
+        <td><%= link_to 'Edit', edit_blender_art_path(blender_art) %></td>
+        <td><%= link_to 'Destroy', blender_art, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Blender Art', new_blender_art_path %>
