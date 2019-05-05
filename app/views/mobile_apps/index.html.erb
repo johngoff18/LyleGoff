@@ -2,23 +2,25 @@
 
 <h1>Mobile Apps</h1>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Image url</th>
-      <th>Store link</th>
-      <th colspan="3"></th>
+		<th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Image url</th>
+      <th scope="col">Store link</th>
+      <th  scope="col" colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @mobile_apps.each do |mobile_app| %>
       <tr>
+		  <th scope="row"><%= mobile_app.id %></th>
         <td><%= mobile_app.name %></td>
         <td><%= mobile_app.description %></td>
-        <td><%= mobile_app.image_url %></td>
+        <td><img src="<%= mobile_app.image_url%>" class="img-fluid" alt="<%= mobile_app.name %>"/></td>
         <td><%= mobile_app.store_link %></td>
         <td><%= link_to 'Show', mobile_app %></td>
         <td><%= link_to 'Edit', edit_mobile_app_path(mobile_app) %></td>
@@ -30,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Mobile App', new_mobile_app_path %>
+<%= link_to 'New Mobile App', new_mobile_app_path , class:"btn btn-primary"%>

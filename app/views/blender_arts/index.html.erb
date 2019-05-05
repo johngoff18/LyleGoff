@@ -1,24 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Blender Arts</h1>
+<h1>Blender Art Projects</h1>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Image url</th>
-      <th>Link</th>
-      <th colspan="3"></th>
+		<th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Image url</th>
+      <th scope="col">Link</th>
+      <th  scope="col" colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @blender_arts.each do |blender_art| %>
       <tr>
+		  <th scope="row"><%= blender_art.id %></th>
         <td><%= blender_art.name %></td>
-        <td><%= blender_art.description %></td>
-        <td><%= blender_art.image_url %></td>
+
+        <td><img src="<%= blender_art.image_url%>" class="img-fluid" alt="<%= blender_art.name %>"/></td>
         <td><%= blender_art.link %></td>
         <td><%= link_to 'Show', blender_art %></td>
         <td><%= link_to 'Edit', edit_blender_art_path(blender_art) %></td>
@@ -30,4 +31,4 @@
 
 <br>
 
-<%= link_to 'New Blender Art', new_blender_art_path %>
+<%= link_to 'New Blender Art', new_blender_art_path , class:"btn btn-primary" %>
