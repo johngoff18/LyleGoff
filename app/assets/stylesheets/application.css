@@ -13,9 +13,7 @@
  *= require_tree .
  *= require_self
  */
-body {
-	background: url(<%= asset_path 'screenshot.png' %>)
-}
+
 .background {
   position: absolute;
   top: 0;
@@ -82,7 +80,6 @@ html {
 }
 
 .pricing-header {
-	background-image: url(<%= asset_path('bg.png') %>);
   max-width: 700px;
 }
 
